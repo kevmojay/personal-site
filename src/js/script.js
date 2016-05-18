@@ -7,7 +7,7 @@
     function smoothScroll (duration) {
     	$('a[href^="#"]').on('click', function(event) {
 
-    	    let target = $( $(this).attr('href') );
+    	    var target = $( $(this).attr('href') );
 
     	    if( target.length ) {
     	        event.preventDefault();
@@ -18,7 +18,7 @@
     	});
     }
 
-    const scrollActive = {
+    var scrollActive = {
         activeSection: 'about',
         init: function() {
             this.sections = document.getElementsByClassName("body-section");
@@ -34,7 +34,7 @@
             return this.activeSectionIndex;
         },
         setActiveTab: function(tabIndex) {
-            for (let i = 0; i < this.tabs.length; i++) {
+            for (var i = 0; i < this.tabs.length; i++) {
                 this.tabs[i].className = "tab";
             }
             this.tabs[tabIndex].className = "tab active";
@@ -42,7 +42,7 @@
         checkForNewActive: function() {
             this.closest = Math.abs(this.sections[this.getActiveIndex()].getBoundingClientRect().top);
             this.distance = 0;
-            for (let i = 0; i < this.sections.length; i++) {
+            for (var i = 0; i < this.sections.length; i++) {
                 this.distance = Math.abs(this.sections[i].getBoundingClientRect().top);
                 if (this.distance < this.closest) {
                     this.setActiveIndex(i);

@@ -1,0 +1,120 @@
+#home-wrap{
+  @include flexbox-display-flex;
+  min-height: 100vh;
+}
+
+#home-sections {
+  @include flexbox-flex-size(1);
+  .body-section{
+    height:100vh;
+    max-height: 100%;
+    position: relative;
+  }
+  #about {
+    background-color: $about-section-bg;
+    background-position: center;
+    background-size: cover;
+    color: white;
+
+
+    .content-container{
+      @include align-items(center);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      .profile-picture{
+        border-radius: 50%;
+        width:178px;
+        height:178px;
+      }
+      h2.section-title{
+        font-size:2.2em;
+        letter-spacing: 2px;
+        margin:10px;
+      }
+      p.sub-text{
+        margin: 0;
+        font-size: 1.5em;
+      }
+    }
+
+  }
+  #blog {
+    background-color: $blog-section-bg;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    .content-container{
+      @include align-items(center);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 9999;
+      .section-title{
+        background-image:url(../img/blog-rain-pixels.svg);
+        background-position:center;
+        display: table;
+        height: 133px;
+        h2{
+          font-size:2.2em;
+          letter-spacing: 2px;
+          margin:10px;
+          z-index:100;
+          display: table-cell;
+          vertical-align: middle;
+        }
+      }
+
+      p.sub-text{
+        margin: 0;
+        font-size: 1.5em;
+      }
+    }
+  }
+  #contact {
+    background-color: $contact-section-bg;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    .content-container{
+      @include align-items(center);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 9999;
+      .section-title{
+        background-image:url(../img/contact-rain-pixels.svg);
+        background-position:center;
+        display: table;
+        height: 133px;
+        h2{
+          font-size:2.2em;
+          letter-spacing: 2px;
+          margin:10px;
+          z-index:100;
+          display: table-cell;
+          vertical-align: middle;
+        }
+      }
+
+      p.sub-text{
+        margin: 0;
+        font-size: 1.5em;
+      }
+      .social-links{
+        @include flexbox-display-flex;
+
+        .fa{
+          cursor: pointer;
+          font-size: 5em;
+          margin: 20px;
+          color: white;
+        }
+      }
+
+    }
+  }
+}

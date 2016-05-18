@@ -1,0 +1,110 @@
+@mixin flexbox-display-flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin active-pixel-mixin {
+                &.p7 {
+                height: 8px;
+                width: 8px;
+                opacity: 1;
+              }
+              &.p6 {
+                height: 7px;
+                width: 7px;
+                opacity: 0.8;
+              }
+              &.p5 {
+                height: 6px;
+                width: 6px;
+                opacity: 0.6;
+              }
+              &.p4 {
+                height: 5px;
+                width: 5px;
+                opacity: 0.5;
+              }
+              &.p3 {
+                height: 4px;
+                width: 4px;
+                opacity: 0.3;
+              }
+              &.p2 {
+                height: 3px;
+                width: 3px;
+                opacity: 0.2;
+              }
+              &.p1 {
+                height: 2px;
+                width: 2px;
+                opacity: 0.1;
+              }
+              &.p0 {
+                height: 1px;
+                width: 1px;
+                opacity: 0.05;
+              }
+}
+
+
+@mixin align-items($value: stretch) {
+	@if $value == flex-start {
+		-webkit-box-align: start;
+		-ms-flex-align: start;
+	} @else if $value == flex-end {
+		-webkit-box-align: end;
+		-ms-flex-align: end;
+	} @else {
+		-webkit-box-align: $value;
+		-ms-flex-align: $value;
+	}
+	-webkit-align-items: $value;
+	-moz-align-items: $value;
+	align-items: $value;
+}
+
+@mixin flexbox-flex-size($value: 1) {
+  -webkit-flex: $value;
+  -ms-flex: $value;
+  flex: $value;
+}
+
+@mixin flex-direction($value: row) {
+	@if $value == row-reverse {
+		-webkit-box-direction: reverse;
+		-webkit-box-orient: horizontal;
+	} @else if $value == column {
+		-webkit-box-direction: normal;
+		-webkit-box-orient: vertical;
+	} @else if $value == column-reverse {
+		-webkit-box-direction: reverse;
+		-webkit-box-orient: vertical;
+	} @else {
+		-webkit-box-direction: normal;
+		-webkit-box-orient: horizontal;
+	}
+	-webkit-flex-direction: $value;
+	-moz-flex-direction: $value;
+	-ms-flex-direction: $value;
+	flex-direction: $value;
+}
+
+@mixin mobile {
+  @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
